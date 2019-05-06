@@ -6,8 +6,8 @@ from os import path
 
 # import pandas_profiling
 
-red_wines = pandas.read_csv(path.realpath('winequality-red.csv'), error_bad_lines=False)
-white_wines = pandas.read_csv(path.realpath('winequality-white.csv'), error_bad_lines=False)
+red_wines = pandas.read_csv(path.realpath('winequality-red.csv'), delimiter=';', error_bad_lines=False)
+white_wines = pandas.read_csv(path.realpath('winequality-white.csv'), delimiter=';', error_bad_lines=False)
 
 
 print(len(red_wines))
@@ -19,3 +19,6 @@ print(white_wines.shape)
 
 print(white_wines.describe())
 print(red_wines.describe())
+
+print(white_wines.quality.value_counts())
+print(red_wines.quality.value_counts())
